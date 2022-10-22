@@ -5,7 +5,7 @@ import { FaStar, FaEye } from "react-icons/fa";
 
 const News = () => {
   const news = useLoaderData();
-  console.log(news);
+  // console.log(news);
   return (
     <div className="text-white">
       <div className="flex justify-center">

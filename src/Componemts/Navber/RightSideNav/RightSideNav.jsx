@@ -27,7 +27,7 @@ const RightSideNav = () => {
   };
 
   return (
-    <div className="lg:sticky lg:top-28 ">
+    <div className="lg:fixed  ">
       <div className="text-white">
         <div className="flex  justify-center mt-10">
           <button
@@ -73,7 +73,7 @@ const RightSideNav = () => {
               <FaGithub /> Github
             </a>
           </div>
-          <div className=" px-10 rounded mt-6 lg:mt-2 bg-violet-500 hover:bg-violet-600">
+          <div className=" px-10 rounded mt-6 mb-10 lg:mb-0 lg:mt-2 bg-violet-500 hover:bg-violet-600">
             <a
               className="flex items-center gap-4  px-6 py-1"
               href="http://facebook.com/"
@@ -83,7 +83,7 @@ const RightSideNav = () => {
           </div>
         </div>
       </div>
-      <div className=" py-14 lg:py-6 lg:px-4 ">
+      <div className=" py-14 lg:py-6 lg:px-4 lg:block hidden">
         <Carosel></Carosel>
       </div>
     </div>

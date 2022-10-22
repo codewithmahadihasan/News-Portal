@@ -5,6 +5,7 @@ import News from "../Componemts/News/News";
 import HomePage from "../Componemts/Pages/HomePage";
 import Register from "../Componemts/User/Register";
 import SignIn from "../Componemts/User/SignIn";
+import Private from "./Private";
 
 export const router = createBrowserRouter([
     {
@@ -13,6 +14,12 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/home',
+                loader: () => fetch("http://localhost:5000/home"),
+                element: <HomePage></HomePage>,
+
+            },
+            {
+                path: '/',
                 loader: () => fetch("http://localhost:5000/home"),
                 element: <HomePage></HomePage>,
 
@@ -27,7 +34,7 @@ export const router = createBrowserRouter([
             {
                 path: '/news/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`),
-                element: <News></News>
+                element: <Private><News></News></Private>
             },
             { path: '/login', element: <SignIn></SignIn> },
             { path: '/register', element: <Register></Register> }

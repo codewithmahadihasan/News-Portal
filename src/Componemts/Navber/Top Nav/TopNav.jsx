@@ -69,7 +69,7 @@ const TopNav = () => {
                   {user?.photoURL ? (
                     <img
                       className="w-10 h-10 rounded-full ring-2 ring-offset-4 bg-gray-500 ring-violet-400 ring-offset-gray-800"
-                      src={user?.photoURL}
+                      src={user.photoURL}
                       alt=""
                     />
                   ) : (
@@ -79,7 +79,7 @@ const TopNav = () => {
               </li>
             </ul>
             {isUser && (
-              <div className="absolute mx-auto top-20  lg:left-1/4 w-80">
+              <div className="absolute  z-[1000] mx-auto top-20  lg:left-1/4 w-80">
                 <div className="p-5 text-center bg-[#10579a] border rounded shadow-sm">
                   <div className="flex justify-between items-start">
                     <div>
@@ -201,24 +201,22 @@ const TopNav = () => {
                             title="Company"
                             className="inline-flex items-center"
                           >
-                            <svg
-                              className="w-8 text-purple-400"
-                              viewBox="0 0 24 24"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeMiterlimit="10"
-                              stroke="currentColor"
-                              fill="none"
+                            <Link
+                              to="/home"
+                              aria-label="Company"
+                              title="Company"
+                              className="inline-flex items-center"
                             >
-                              <rect x="3" y="1" width="7" height="12" />
-                              <rect x="3" y="17" width="7" height="6" />
-                              <rect x="14" y="1" width="7" height="6" />
-                              <rect x="14" y="11" width="7" height="12" />
-                            </svg>
-                            <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                              Company
-                            </span>
+                              <img
+                                className="w-8 text-teal-400"
+                                src={icon}
+                                alt=""
+                              />
+
+                              <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
+                                BD News
+                              </span>
+                            </Link>
                           </Link>
                         </div>
                         <div>

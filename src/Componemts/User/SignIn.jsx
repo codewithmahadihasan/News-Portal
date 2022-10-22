@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2/dist/sweetalert2.all";
 
@@ -7,26 +7,30 @@ const SignIn = () => {
   const navigate = useNavigate();
   const { loginWithEmail } = useContext(AuthContext);
   const [error, setError] = useState();
+
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/home";
   const login = (event) => {
     event.preventDefault();
-    const from = event.target;
-    const email = from.email.value;
-    const password = from.password.value;
-    console.log(loginWithEmail);
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
     loginWithEmail(email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         Swal.fire("Login Successfully", "Thanks for join with us", "success");
         setError("");
-        from.reset();
-        navigate("/home");
+        form.reset();
+        navigate(from, { replace: true });
         // ...
       })
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
-        from.reset();
+        form.reset();
       });
   };
   return (

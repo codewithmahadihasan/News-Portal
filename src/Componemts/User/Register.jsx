@@ -16,28 +16,27 @@ const Register = () => {
     const photoURl = from.photoURl.value;
     const email = from.email.value;
     const password = from.password.value;
-    console.log(name, email, password, photoURl);
+    // console.log(name, email, password, photoURl);
     CreateWithEmail(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+
         updateProfile(user, {
           displayName: name,
           photoURL: photoURl,
         })
           .then(() => {
-            // Profile updated!
-            // ...
+            Swal.fire(
+              "Registration Successful",
+              "Thanks for join with us",
+              "success"
+            );
           })
           .catch((error) => {
             // An error occurred
             // ...
           });
-        Swal.fire(
-          "Registration Successful",
-          "Thanks for join with us",
-          "success"
-        );
+
         setError("");
         from.reset();
         navigate("/home");

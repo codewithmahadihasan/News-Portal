@@ -17,7 +17,7 @@ const LeftSideNav = () => {
           <Link
             to={`/category/${data.id}`}
             className="font-medium text-xl tracking-wide pl-6 text-white transition-colors duration-200 text-start hover:text-purple-700"
-            key={data.id}
+            // key={data.id}
           >
             {data.name}
           </Link>

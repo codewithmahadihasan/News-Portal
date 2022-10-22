@@ -15,11 +15,15 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
 
+  const [loader, setLoader] = useState(true);
+
   const loginWithPopUp = (provider) => {
+    setLoader(true);
     return signInWithPopup(auth, provider);
   };
 
   const logOut = () => {
+    setLoader(true);
     signOut(auth)
       .then(() => {
         // Sign-out successful.
@@ -30,14 +34,17 @@ const AuthProvider = ({ children }) => {
   };
 
   const CreateWithEmail = (email, password) => {
+    setLoader(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const loginWithEmail = (email, password) => {
+    setLoader(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setLoader(false);
       setUser(currentUser);
     });
     return () => {
@@ -47,6 +54,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    loader,
     loginWithPopUp,
     logOut,
     CreateWithEmail,
