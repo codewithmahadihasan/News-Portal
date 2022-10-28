@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2/dist/sweetalert2.all";
+import useTitle from "../../Hock/useTitle";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const { loginWithEmail } = useContext(AuthContext);
   const [error, setError] = useState();
+  useTitle("Login");
 
   const location = useLocation();
   const from = location.state?.from?.pathname || "/home";

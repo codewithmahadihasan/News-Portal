@@ -2,10 +2,12 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaStar, FaEye } from "react-icons/fa";
+import useTitle from "../../Hock/useTitle";
 
 const News = () => {
   const news = useLoaderData();
   // console.log(news);
+  useTitle("News Details");
   return (
     <div className="text-white">
       <div className="flex justify-center">

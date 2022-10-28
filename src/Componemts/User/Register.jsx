@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2/dist/sweetalert2.all";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../../Hock/useTitle";
 
 const Register = () => {
   const [error, setError] = useState();
   const { CreateWithEmail } = useContext(AuthContext);
   const navigate = useNavigate();
+  useTitle("Register");
   const register = (event) => {
     event.preventDefault();
 
