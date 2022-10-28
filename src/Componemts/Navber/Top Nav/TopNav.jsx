@@ -12,7 +12,7 @@ const TopNav = () => {
   console.log(user);
 
   return (
-    <div className="sticky top-[-1px]">
+    <div className="fixed-top">
       <div className="bg-[#1E2B47] ">
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className="relative flex items-center justify-between">

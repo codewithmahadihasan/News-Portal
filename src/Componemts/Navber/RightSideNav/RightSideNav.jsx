@@ -27,7 +27,7 @@ const RightSideNav = () => {
   };
 
   return (
-    <div className="lg:fixed  ">
+    <div className="lg:sticky top-28 ">
       <div className="text-white">
         <div className="flex  justify-center mt-10">
           <button
@@ -83,7 +83,7 @@ const RightSideNav = () => {
           </div>
         </div>
       </div>
-      <div className=" py-14 lg:py-6 lg:px-4 lg:block hidden">
+      <div className=" py-14 lg:py-6 lg:px-4 ">
         <Carosel></Carosel>
       </div>
     </div>

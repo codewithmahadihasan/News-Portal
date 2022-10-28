@@ -14,26 +14,26 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/home',
-                loader: () => fetch("http://localhost:5000/home"),
+                loader: () => fetch("https://news-server-gamma.vercel.app/home"),
                 element: <HomePage></HomePage>,
 
             },
             {
                 path: '/',
-                loader: () => fetch("http://localhost:5000/home"),
+                loader: () => fetch("https://news-server-gamma.vercel.app/home"),
                 element: <HomePage></HomePage>,
 
             },
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+                loader: ({ params }) => fetch(`https://news-server-gamma.vercel.app/category/${params.id}`),
                 element: <HomePage></HomePage>,
 
             }
             ,
             {
                 path: '/news/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`),
+                loader: ({ params }) => fetch(`https://news-server-gamma.vercel.app/news/${params.id}`),
                 element: <Private><News></News></Private>
             },
             { path: '/login', element: <SignIn></SignIn> },

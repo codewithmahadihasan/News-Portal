@@ -6,7 +6,7 @@ const HomePage = () => {
   const datas = useLoaderData();
 
   return (
-    <div className="text-white text-2xl">
+    <div>
       {datas.map((data) => (
         <SingleNews key={data._id} data={data}></SingleNews>
       ))}

@@ -13,7 +13,7 @@ const Main = () => {
         <div className="bg-[#0f0b3d] lg:col-span-2 hidden lg:block  ">
           <LeftSideNav></LeftSideNav>
         </div>
-        <div className="lg:col-span-7 bg-[#090A27]">
+        <div className="lg:col-span-7 bg-[#090A27] py-28">
           <Outlet></Outlet>
         </div>
         <div className="bg-[#0f0b3d]  lg:col-span-3">
